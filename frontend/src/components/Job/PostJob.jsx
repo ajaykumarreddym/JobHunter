@@ -61,6 +61,16 @@ const PostJob = () => {
       )
       .then((res) => {
         toast.success(res.data.message);
+      setTitle("");
+      setDescription("");
+      setCategory("");
+      setCountry("");
+      setCity("");
+      setLocation("");
+      setSalaryFrom("");
+      setSalaryTo("");
+      setFixedSalary("");
+      setSalaryType("default");
       })
       .catch((err) => {
         toast.error(err.response.data.message);
@@ -177,7 +187,7 @@ const PostJob = () => {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Job Description"
             />
-            <button type="submit" onClick={(e)=>e.preventDefault()}>Create Job</button>
+            <button type="submit" >Create Job</button>
           </form>
         </div>
       </div>
