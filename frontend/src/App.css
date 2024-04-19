@@ -97,7 +97,7 @@ p {
 }
 .authPage .container .header img {
   width: 300px;
-  height: 120px;
+  height: 300px;
   margin: 0 auto;
 }
 .authPage .container .header {
@@ -1348,4 +1348,63 @@ nav .hamburger {
   .resume-modal {
     z-index: 11;
   }
+}
+/* Profile Css */
+/* Profile.css */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 400px;
+}
+
+.profile-header {
+  background-color: #00703a; /* Blue header */
+  color: #ffffff;
+  padding: 20px;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-content {
+  padding: 20px;
+}
+
+.profile-content p {
+  margin: 10px 0;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.profile-footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-footer button {
+  background-color: #dc3545; /* Red button */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-footer button:hover {
+  background-color: #c82333; /* Darker red on hover */
 }

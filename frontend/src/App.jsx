@@ -15,6 +15,7 @@ import PostJob from "./components/Job/PostJob";
 import Footer from "./components/Layout/Footer";
 import Navbar from "./components/Layout/Navbar";
 import NotFound from "./components/NotFound/NotFound";
+import Profile from "./components/Person/Profile";
 import { Context } from "./main";
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/applications/me" element={<MyApplications />} />
           <Route path="/job/post" element={<PostJob />} />
           <Route path="/job/me" element={<MyJobs />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
