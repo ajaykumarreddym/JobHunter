@@ -11,7 +11,7 @@ import userRouter from "./routes/userRouter.js";
 
 const app=express();
 
-dotenv.config({path:'./config/config.env'});
+dotenv.config({path:'./.env'});
 
 app.use(cors({
     origin: [process.env.FRONTEND_URL],
