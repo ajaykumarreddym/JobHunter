@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,useContext, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../../main";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const { isAuthorized, setIsAuthorized, user } = useContext(Context);
   const navigateTo = useNavigate();
 
   return (
-    <nav className="navbar">
+    <nav className={isAuthorized ? "navbar" : "navbarHide"}>
       <div className="container">
         <div className="logo">
           <img src="/jobhunter_whitelogo.png" alt="logo" />
@@ -25,9 +27,27 @@ const Navbar = () => {
           </li>
           <li>
             <Link to={"/applications/me"} onClick={() => setShow(false)}>
-              MY APPLICATIONS
+            {user && user.role === "Employer"
+                ? "APPLICANT'S APPLICATIONS"
+                : "MY APPLICATIONS"}
             </Link>
           </li>
+          {user && user.role === "Employer" ? (
+            <>
+              <li>
+                <Link to={"/job/post"} onClick={() => setShow(false)}>
+                  POST NEW JOB
+                </Link>
+              </li>
+              <li>
+                <Link to={"/job/me"} onClick={() => setShow(false)}>
+                  VIEW YOUR JOBS
+                </Link>
+              </li>
+            </>
+          ) : (
+            <></>
+          )}
           <li>
             <Link to={"/profile"} onClick={() => setShow(false)}>
               PROFILE
