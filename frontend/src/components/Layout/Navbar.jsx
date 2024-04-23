@@ -1,4 +1,4 @@
-import React, { useState,useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../main";
@@ -12,7 +12,9 @@ const Navbar = () => {
     <nav className={isAuthorized ? "navbar" : "navbarHide"}>
       <div className="container">
         <div className="logo">
+        <Link to={"/"} onClick={() => setShow(false)}>
           <img src="/jobhunter_whitelogo.png" alt="logo" />
+          </Link>
         </div>
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>
